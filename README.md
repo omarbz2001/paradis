@@ -19,9 +19,9 @@ This project implements a distributed algorithm in Golang to determine a leader 
 
 This project is a simulated network of nodes that:
 
-1- Elects a leader node based on ID values.
-2- Selects parent nodes for each node.
-3- Terminates with a broadcast message once the leader node is identified.
+1) Elects a leader node based on ID values.
+2) Selects parent nodes for each node.
+3) Terminates with a broadcast message once the leader node is identified.
 
 Each node starts a TCP server, allowing nodes to communicate with their neighbors as defined in a YAML configuration file.
 
@@ -81,10 +81,10 @@ Each node writes its interactions to this log, detailing sent and received messa
 ## Message Types
 The program uses the following message types for communication:
 
-M (Message): Used by nodes to propose a parent. A node with the highest ID becomes the leader.
-P (Parent): Confirmation of parent selection.
-R (Reject): Response for nodes that do not become parents.
-T (Terminate): Sent by the root node to indicate the end of the algorithm.
+- M (Message): Used by nodes to propose a parent. A node with the highest ID becomes the leader.
+- P (Parent): Confirmation of parent selection.
+- R (Reject): Response for nodes that do not become parents.
+- T (Terminate): Sent by the root node to indicate the end of the algorithm.
 ## Logging
 Each node creates a unique log file named Log-<Node_Address> containing all the communication steps, parent selection, leader election, and termination status.
 ## Example Log

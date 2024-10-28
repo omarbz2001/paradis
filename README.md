@@ -27,8 +27,8 @@ Each node starts a TCP server, allowing nodes to communicate with their neighbor
 
 ## Requirements
 
-Golang (tested on Go version 1.17+)
-YAML parsing library (gopkg.in/yaml.v2)
+- Golang (tested on Go version 1.17+)
+- YAML parsing library (gopkg.in/yaml.v2)
 
 ## Setup
 

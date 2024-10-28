@@ -92,10 +92,14 @@ Each node creates a unique log file named Log-<Node_Address> containing all the 
 Parsing done ...
 Server starting ....
 Starting algorithm ...
-Sent initial <M, 1> to node 2
-Received <M, 1> from node 2
-Adopting node 2 as parent
-Sent <P, 1> to node 2
+Sent initial <M, 5> to node 6
+Received <M, 8> from node 7
+Adopting node 7 as parent
+Sent <P, 5> to node 8
+Received <M, 8> from node 8
+Sent <R, 5> to node 8
+Received <T, 8> - Termination initiated by root
+
 ```
 
 

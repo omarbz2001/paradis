@@ -1,40 +1,39 @@
-# Broadcastbywave
+# Depth-ST-Without-Root
+This project implements a distributed algorithm in Golang to determine a leader node in a network, select parents, and propagate a termination signal using a simple message-passing model. Nodes communicate over TCP, sending messages to neighbors based on an initial configuration.
 
 
 
-## Getting started
+## Table of Contents
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- Project Overview
+- Requirements
+- Setup
+- Configuration
+- Running the Program
+- Message Types
+- Logging
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Project Overview
 
-```
-cd existing_repo
-git remote add origin https://gitedu.hesge.ch/lsds/teaching/master/broadcastbywave.git
-git branch -M main
-git push -uf origin main
-```
+This project is a simulated network of nodes that:
 
-## Integrate with your tools
+1- Elects a leader node based on ID values.
+2- Selects parent nodes for each node.
+3- Terminates with a broadcast message once the leader node is identified.
 
-- [ ] [Set up project integrations](https://gitedu.hesge.ch/lsds/teaching/master/broadcastbywave/-/settings/integrations)
+Each node starts a TCP server, allowing nodes to communicate with their neighbors as defined in a YAML configuration file.
 
-## Collaborate with your team
+## Requirements
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Golang (tested on Go version 1.17+)
+YAML parsing library (gopkg.in/yaml.v2)
 
-## Test and Deploy
+## Setup
 
-Use the built-in continuous integration in GitLab.
+1- Clone the repository:
+
 
 - [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
 - [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
